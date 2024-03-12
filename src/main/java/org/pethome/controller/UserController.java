@@ -16,10 +16,16 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
+    //登录
     @PostMapping("/login")
     public Map login(@RequestParam String username,@RequestParam String password) {
 
         return userService.login(username,password);
     }
+    //注册
+    @PostMapping("/register")
+    public Map register(@RequestParam String username,@RequestParam String password) {
+        return userService.register(username,password);
+    }
+
 }

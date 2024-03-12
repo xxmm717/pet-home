@@ -63,4 +63,15 @@ public class UserServiceImpl implements UserService {
         else
             return R.fail("密码错误");
     }
+    // 注册
+    @Override
+    public Map register(String username, String password) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        //设置默认头像
+        user.setAvatar("https://tanhua-zxm.oss-cn-hangzhou.aliyuncs.com/xingxuan/%E7%94%A8%E6%88%B7/default.jpg");
+        userMapper.insert(user);
+        return R.ok("注册成功");
+    }
 }

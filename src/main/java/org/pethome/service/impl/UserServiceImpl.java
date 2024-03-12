@@ -66,6 +66,14 @@ public class UserServiceImpl implements UserService {
     // 注册
     @Override
     public Map register(String username, String password) {
+        //判断用户名是否已经存在
+        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
+        lqw.eq(User::getUsername,username);
+        User user1 = userMapper.selectOne(lqw);
+        if (user1.getUsername().equals(username)){
+            return R.fail("用户名已存在");
+        }
+        //保存用户信息
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);

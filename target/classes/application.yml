@@ -1,0 +1,20 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: pethome
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/prthome?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      table-prefix: tb_ #表名前缀
+      id-type: auto #id策略为自增长
+

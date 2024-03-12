@@ -5,7 +5,7 @@ spring:
     name: pethome
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/prthome?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/pethome?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
     username: root
     password: 123456
 
@@ -15,6 +15,5 @@ mybatis-plus:
     map-underscore-to-camel-case: true
   global-config:
     db-config:
-      table-prefix: tb_ #表名前缀
       id-type: auto #id策略为自增长
 

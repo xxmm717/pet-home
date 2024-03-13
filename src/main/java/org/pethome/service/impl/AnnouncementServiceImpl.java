@@ -25,4 +25,11 @@ public class AnnouncementServiceImpl implements AnnouncementService {
 
         return announcementMapper.selectList(lqw);
     }
+    //根据公告id获取详情信息
+    @Override
+    public Announcement getDetail(Long id) {
+        LambdaQueryWrapper<Announcement> lqw = new LambdaQueryWrapper<>();
+        lqw.eq(Announcement::getAnnouncementId,id);
+        return announcementMapper.selectOne(lqw);
+    }
 }

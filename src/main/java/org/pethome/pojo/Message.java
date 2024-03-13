@@ -6,12 +6,11 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-@TableName("tb_announcement")
-public class Announcement {
+@TableName("tb_message")
+public class Message {
+    private Long messageId;
+    private Long userId;
     private Long announcementId;
-    private String title;
-    private String content;
-    private String picture;
+    private String message;
     private Date datetime;
-    private Long liked;
 }

@@ -3,6 +3,7 @@ package org.pethome.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
 import org.pethome.mapper.UserMapper;
 import org.pethome.pojo.User;
 import org.pethome.service.UserService;
@@ -17,6 +18,7 @@ import java.util.Map;
 import static net.sf.jsqlparser.util.validation.metadata.NamedObject.user;
 
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
 
     @Autowired
